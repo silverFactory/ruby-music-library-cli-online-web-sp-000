@@ -4,6 +4,7 @@ class MusicImporter
   def initialize(filepath)
     @path = filepath
     all_files = Dir.entries(@path)
+    binding.pry
     @files = all_files.select{|f| f != "." || f!= ".."}
   end
 
