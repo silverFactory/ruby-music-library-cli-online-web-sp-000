@@ -40,8 +40,8 @@ class Song
     attr_array = filename.split(" - ")
     #binding.pry
     song = Song.new(attr_array[1])
-    song.artist.name = Artist.find_or_create_by_name(attr_array[0])
-    song.genre.name = Genre.find_or_create_by_name(attr_array[2].split(".mp3")[0])
+    song.artist= Artist.find_or_create_by_name(attr_array[0])
+    song.genre= Genre.find_or_create_by_name(attr_array[2].split(".mp3")[0])
     song
   end
 end
