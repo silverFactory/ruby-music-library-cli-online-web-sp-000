@@ -5,7 +5,7 @@ class MusicImporter
     @path = filepath
     all_files = Dir.entries(@path)
     # binding.pry
-    @files = all_files.select{|f| f != "." || f!= ".."}
+    @files = all_files.select{|f| f.length >= 4}
   end
 
 end
