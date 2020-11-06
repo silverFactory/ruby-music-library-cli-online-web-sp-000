@@ -16,11 +16,11 @@ class Song
   end
   def artist=(artist)
     @artist = artist
-  #  artist.add_song(self)
+    artist.add_song(self)
   end
   def genre=(genre)
     @genre = genre
-  #  genre.add_song(self)
+    genre.add_song(self)
   end
   def self.all
     @@all
@@ -39,9 +39,9 @@ class Song
   def self.new_from_filename(filename)
     attr_array = filename.split(" - ")
     #binding.pry
-    song = Song.new(attr_array[1], attr_array[0], attr_array[2].split(".mp3")[0] )
-    # song.artist.name = attr_array[0]
-    # song.genre.name = attr_array[2].split(".mp3")[0]
-    # song
+    song = Song.new(attr_array[1])
+    song.artist.name = Artist.find_or_create_by_name(attr_array[0])
+    song.genre.name = Genre.find_or_create_by_name(attr_array[2].split(".mp3")[0])
+    song
   end
 end
