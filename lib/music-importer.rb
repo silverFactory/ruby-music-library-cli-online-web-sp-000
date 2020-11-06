@@ -4,7 +4,7 @@ class MusicImporter
   def initialize(filepath)
     @path = filepath
     @files = Dir.glob(".mp3")
-    binding.pry
+#    binding.pry
   end
 
 end
