@@ -35,6 +35,10 @@ class Song
     end
   end
   def self.new_from_filename(filename)
-    filename.split(" - ")
+    attr_array = filename.split(" - ")
+    song = Song.new(attr_array[1])
+    song.artist = attr_array[0]
+    song.genre = attr_array[2]
+    song
   end
 end
