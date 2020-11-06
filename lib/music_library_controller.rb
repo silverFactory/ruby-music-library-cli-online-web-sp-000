@@ -39,4 +39,11 @@ class MusicLibraryController
     song_array = artist_obj.songs.sort{|a, b| a.name <=> b.name}
     song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre.name}"}
   end
+  def list_songs_by_genre
+    puts "Please enter the name of a genre:"
+    genre = gets.chomp
+    genre_obj = Genre.find_or_create_by_name(genre)
+    genre_array = genre_obj.songs.sort{|a, b| a.name <=> b.name}
+    genre_array.each_with_index{|s, i| puts "#{i+1}. #{s.artist} - #{s.name}"}
+  end
 end
