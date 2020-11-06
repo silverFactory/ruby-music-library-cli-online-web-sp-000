@@ -7,5 +7,7 @@ class MusicImporter
     # binding.pry
     @files = all_files.select{|f| f.length >= 4}
   end
+  def import
 
+  end
 end
