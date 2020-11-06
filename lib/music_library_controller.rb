@@ -35,12 +35,14 @@ class MusicLibraryController
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
     artist = gets.chomp
-    artist_obj = Artist.find_by_name(artist)
+    artist_obj = Artist.find_or_create_by_name(artist)
     #get all songs by artist
     #sort by song name
     #print in order
     #binding.pry
-    song_array = artist_obj.songs.sort{|a, b| a.name <=> b.name}
-    song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre}"}
+
+      song_array = artist_obj.songs.sort{|a, b| a.name <=> b.name}
+      song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre}"}
+
   end
 end
