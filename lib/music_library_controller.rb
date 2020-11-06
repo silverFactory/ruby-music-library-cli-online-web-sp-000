@@ -42,7 +42,7 @@ class MusicLibraryController
     #binding.pry
 
       song_array = artist_obj.songs.sort{|a, b| a.name <=> b.name}
-      song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre}"}
+      song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre.name}"}
 
   end
 end
