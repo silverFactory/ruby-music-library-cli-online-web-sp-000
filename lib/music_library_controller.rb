@@ -46,4 +46,8 @@ class MusicLibraryController
     genre_array = genre_obj.songs.sort{|a, b| a.name <=> b.name}
     genre_array.each_with_index{|s, i| puts "#{i+1}. #{s.artist.name} - #{s.name}"}
   end
+  def play_song
+    puts "Which song number would you like to play?"
+    song_num = gets.chomp
+  end
 end
