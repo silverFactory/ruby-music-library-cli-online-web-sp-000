@@ -8,6 +8,6 @@ class MusicImporter
     @files = all_files.select{|f| f.length >= 4}
   end
   def import
-
+    self.files.each{|s| Song.create_from_filename(s)}
   end
 end
