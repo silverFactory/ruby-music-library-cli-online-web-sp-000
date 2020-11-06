@@ -19,6 +19,12 @@ class MusicLibraryController
     while input != "exit" do
       if input == "list songs"
         self.list_songs
+      elsif input == "list artists"
+        self.list_artists
+      elsif input == "list genres"
+        self.list_genres
+      # elsif input == "list artists"
+      #   self.list_artists
       end
       input = gets.chomp
     end
