@@ -19,4 +19,7 @@ class MusicLibraryController
       input = gets.chomp
     end
   end
+  def list_songs
+    
+  end
 end
