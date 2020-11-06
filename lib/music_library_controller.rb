@@ -20,6 +20,7 @@ class MusicLibraryController
     end
   end
   def list_songs
-    
+    ordered_songs = Song.all.sort{|a, b| a.name <=> b.name}
+    ordered_songs.each{|s| puts }
   end
 end
