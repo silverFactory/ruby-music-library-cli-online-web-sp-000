@@ -44,4 +44,9 @@ class Song
     song.genre= Genre.find_or_create_by_name(attr_array[2].split(".mp3")[0])
     song
   end
+  def self.create_from_filename(filename)
+    song = Song.new_from_filename(filename).tap do |s|
+      s.save
+    end
+  end
 end
