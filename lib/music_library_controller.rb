@@ -17,6 +17,9 @@ class MusicLibraryController
     puts "What would you like to do?"
     input = gets.chomp
     while input != "exit" do
+      if input == "list songs"
+        self.list_songs
+      end
       input = gets.chomp
     end
   end
