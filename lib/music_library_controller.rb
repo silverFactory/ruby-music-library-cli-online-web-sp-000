@@ -1,3 +1,4 @@
+require 'pry'
 class MusicLibraryController
 
   def initialize(file_path = './db/mp3s')
@@ -38,6 +39,7 @@ class MusicLibraryController
     #get all songs by artist
     #sort by song name
     #print in order
+    binding.pry
     # song_array = artist_obj.songs.sort{|a, b| a.name <=> b.name}
     # song_array.each_with_index{|s, i| puts "#{i+1}. #{s.name} - #{s.genre}"}
   end
